@@ -41,15 +41,16 @@ const int md = (int)1e9 + 7;
 
 void TC()
 {
-    int n, m, x;
-    cin >> n >> m;
-    vi a(n);
-    int Xor1 = 0, Xor2 = 0, Or = 0;
-    forr(0, n) cin >> a[i], Xor1 ^= a[i];
-    forr(0, m) cin >> x, Or |= x;
+    ll n, mn = INT_MAX, mnn;
+    mnn = mn;
+    ll s1 = 0, s2 = 0;
+    cin >> n;
+    vll a(n), b(n);
+    forr(0, n) cin >> a[i], mn = min(mn, a[i]), s1 += a[i];
 
-    forr(0, n) Xor2 ^= a[i] | Or;
-    cout << min(Xor1, Xor2) sp max(Xor1, Xor2) << nl;
+    forr(0, n) cin >> b[i], mnn = min(mnn, b[i]), s2 += b[i];
+
+    cout << min(s1 + n * mnn, s2 + n * mn) << nl;
 }
 
 int main()
